@@ -13,5 +13,5 @@ RUN \
 RUN git clone https://github.com/r9y9/deepvoice3_pytorch.git
 RUN cd deepvoice3_pytorch && pip3 install -e ".[bin]"
 RUN wget https://www.dropbox.com/s/5ucl9remrwy5oeg/20180505_deepvoice3_checkpoint_step000640000.pth
-RUN mv 20180505_deepvoice3_checkpoint_step000640000.pth /deepvoice3_pytorch/checkpoints
+RUN mkdir -p /deepvoice3_pytorch/checkpoints && mv 20180505_deepvoice3_checkpoint_step000640000.pth /deepvoice3_pytorch/checkpoints/20180505_deepvoice3_checkpoint_step000640000.pth
 RUN ls -la /deepvoice3_pytorch && ls -la /deepvoice3_pytorch/checkpoints
