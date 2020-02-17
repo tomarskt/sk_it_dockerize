@@ -24,3 +24,4 @@ RUN wget https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corp
 RUN mkdir -p /deepvoice3_pytorch/data && cd /deepvoice3_pytorch/data && wget https://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2 && tar xvf LJSpeech-1.1.tar.bz2 && rm LJSpeech-1.1.tar.bz2 && ls -la
 RUN cd deepvoice3_pytorch && python3 preprocess.py --preset=presets/20180505_deepvoice3_ljspeech.json ljspeech ./data/LJSpeech-1.1/ ./data/ljspeech
 COPY sentenses.txt /deepvoice3_pytorch/sentenses.txt
+RUN cd deepvoice3_pytorch && python3 synthesis.py --preset=presets/20180505_deepvoice3_ljspeech.json   ./checkpoints/20180505_deepvoice3_checkpoint_step000640000.pth   sentences.txt   output_dir
