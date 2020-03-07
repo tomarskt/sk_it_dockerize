@@ -4,7 +4,7 @@ RUN \
  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
  apt-get update && \
  apt-get -y upgrade && \
- apt-get install -y git python3-pip python3-dev wget libasound2-dev python3-numpy python3-setuptools libsndfile-dev unzip && \
+ apt-get install -y git python3-pip python3-dev wget libasound2-dev python3-numpy python3-setuptools libsndfile-dev unzip pulseaudio && \
  cd /usr/local/bin &&  \
  ln -s /usr/bin/python3 python && \
  pip3 install --upgrade pip && \
