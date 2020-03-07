@@ -25,4 +25,3 @@ RUN mkdir -p /root/nltk_data/tokenizers && cd /root/nltk_data/tokenizers && wget
 RUN cd deepvoice3_pytorch && python3 preprocess.py --preset=presets/20180505_deepvoice3_ljspeech.json ljspeech ./data/LJSpeech-1.1/ ./data/ljspeech
 COPY ./sentences.txt /deepvoice3_pytorch/sentences.txt
 RUN cd deepvoice3_pytorch && python3 synthesis.py --preset=presets/20180505_deepvoice3_ljspeech.json   ./checkpoints/20180505_deepvoice3_checkpoint_step000640000.pth   sentences.txt   output_dir
-ENV PULSE_SERVER=docker.for.mac.localhost
